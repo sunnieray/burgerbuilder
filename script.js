@@ -1,47 +1,85 @@
-// let wholeWheat = document.getElementById("wholeWheat").value
-// let honeyOat = document.getElementById("honeyOat").value
-// let seasameSeed = document.getElementById("seasameSeed").value
-// //condiments var
-// let ketchup = document.getElementById("ketchup").value
-// let mayo = document.getElementById("mayo").value
-// let mustard = document.getElementById("mustard").value
-// let spicyMustard = document.getElementById("spicyMustard").value
-// let relish = document.getElementById("relish").value
-// //patty var
-// let beef = document.getElementById("beef").value
-// let turkey = document.getElementById("turkey").value
-// let veggie = document.getElementById("veggie").value
-// let blackBean = document.getElementById("blackBean").value
-// let doubleBeef = document.getElementById("doubleBeef").value
-// //toppings var
-// let lettus = document.getElementById("lettus").value
-// let tomatoes = document.getElementById("tomatoes").value
-// let pickles = document.getElementById("pickles").value
-// let onions = document.getElementById("onions").value
-// let spinach = document.getElementById("spinach").value
-// //sides
-// let fries = document.getElementById("fries").value
-// let chips = document.getElementById("chips").value
-// let carrots = document.getElementById("carrots").value
-// //instructions
-// let instructions = document.getElementById("carrots").value
+//variables for dropdown select lists
+let bun = document.getElementById('bun-select');
+let patty = document.getElementById('patty-select');
+let side = document.getElementById('side-choice');
 
-// //buttons
-// const calculateBtn = document.querySelector('#calculateBtn');
-// const enterBtn = document.querySelector('#enterBtn');
+//variables for vegetable checkboxes
+let lettuce = document.getElementById('lettuce');
+let tomato = document.getElementById('tomato');
+let onion = document.getElementById('onion');
+let spinach = document.getElementById('spinach');
+let pickles = document.getElementById('pickle');
 
-// console.log(wholeWheat)
+//variables for condiment checkboxes
+let ketchup = document.getElementById('ketchup');
+let mustard = document.getElementById('mustard');
+let mayo = document.getElementById('mayo');
+let relish = document.getElementById('relish');
+let bbq = document.getElementById('bbq');
 
-// // loadEventListeners();
-// // function loadEventListeners() {
-// //   //add a click event listener for the calculate button that triggers a createBudget function
-// //   calculateBtn.addEventListener('click', calculateTotal);
-// //   //add a click event listener for the add expense button that triggers an addExpense function
-// //   enterBtn.addEventListener('click', addInstructions);
-// // }
+//variable for speccial request
+let request = document.getElementById('request');
+
+//variable for burger price
+let burgerPrice = 3.25;
+
+//variables for prices of options
+const seasamePrice = 1.00;
+const wheatPrice = 1.00;
+const toastPrice = 1.25;
+
+const lettucePrice = 0.25;
+const tomatoPrice = 0.25;
+const onionPrice = 0.25;
+const spinachPrice = 0.25;
+const picklePrice = 0.25;
+
+const ketchupPrice = 0.25;
+const mustardPrice = 0.25;
+const mayoPrice = 0.25;
+const relishPrice = 0.25;
+const bbqPrice = 0.25;
+
+const friesPrice = 1.50;
+const chipsPrice = 1.50;
+const saladPrice = 2.50;
 
 
-const total = document.getElementById("totalPrice").value
-var sum =
-`${'totalprice'}`
-console.log(sum)
+let price = document.getElementById('price');
+let form = document.getElementById('form');
+
+form.onsubmit = submit;
+
+function submit(event) {
+    //burger price
+    burgerPrice = 3.25;
+
+    //add toppings price
+    if (lettuce.checked) { burgerPrice += lettucePrice };
+    if (tomato.checked) { burgerPrice += tomatoPrice };
+    if (onion.checked) { burgerPrice += onionPrice };
+    if (spinach.checked) { burgerPrice += spinachPrice };
+    if (pickles.checked) { burgerPrice += picklePrice };
+
+    //add condiment price
+    if (ketchup.checked) { burgerPrice += ketchupPrice };
+    if (mustard.checked) { burgerPrice += mustardPrice };
+    if (mayo.checked) { burgerPrice += mayoPrice };
+    if (relish.checked) { burgerPrice += relishPrice };
+    if (bbq.checked) { burgerPrice += bbq };
+
+    //add bun price
+    if (bun.value == "seasame") { burgerPrice += seasamePrice }
+    if (bun.value == "toast") { burgerPrice += toastPrice }
+    if (bun.value == "wheat") { burgerPrice += wheatPrice }
+
+    //add side price
+    if (side.value == "fries") { burgerPrice += friesPrice };
+    if (side.value == "chips") { burgerPrice += chipsPrice };
+    if (side.value == "salad") { burgerPrice += saladPrice };
+    
+    //inserts price text
+    price.innerHTML = `$${burgerPrice.toFixed(2)}`;
+
+    event.preventDefault();
+}

@@ -1,0 +1,52 @@
+
+body {
+  background-image: url(https://cdn2.vectorstock.com/i/1000x1000/31/81/seamless-pattern-of-burger-with-yellow-background-vector-22703181.jpg);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-family: ubuntu;
+}
+
+header {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 12pt;
+}
+
+#submit {
+  margin: auto;
+  font-size: 15px;
+  padding: 5px;
+  margin-left: 56px;
+}
+
+textarea { 
+  display: block; 
+}
+
+form {
+  display: flex;
+}
+
+.priceStyle {
+ margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listStyle {
+  border: 2mm solid black;
+  margin: 0;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.burgerPrice {
+ border: 2mm solid black;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+  border-radius: 20px;
+}
