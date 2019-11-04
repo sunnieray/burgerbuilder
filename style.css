@@ -29,13 +29,6 @@ form {
   display: flex;
 }
 
-.priceStyle {
- margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .listStyle {
   border: 2mm solid black;
   margin: 0;
@@ -44,7 +37,7 @@ form {
 }
 
 .burgerPrice {
- border: 2mm solid black;
+  border: 2mm solid black;
   padding-right: 50px;
   padding-left: 50px;
   padding-top: 50px;
